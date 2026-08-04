@@ -11,7 +11,7 @@ interface ChoroplethMapProps {
   onHoverBarangay: (b: BagangaBarangayProperties | null) => void;
   onSelectBarangay: (b: BagangaBarangayProperties | null) => void;
   selectedBarangay: BagangaBarangayProperties | null;
-  onInitMap?: (map: L.Map) => void;
+  onInitMap?: (map: L.Map, bounds: L.LatLngBounds) => void;
 }
 
 export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
@@ -68,7 +68,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
         const props = feature.properties as BagangaBarangayProperties;
 
         // Tooltip popup showing Barangay Name and Population
-        const labelText = `<div style="font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700;">Barangay ${props.name}</div><div style="font-size: 11px; color: #475569;">Population: ${props.formattedPop}</div><div style="font-size: 10px; color: #0284c7; font-weight: 600;">Baganga, Davao Oriental</div>`;
+        const labelText = `<div style="font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700;">Barangay ${props.name}</div><div style="font-size: 11px; color: #475569;">Population: ${props.formattedPop}</div><div style="font-size: 10px; color: #475569;">Lat: ${props.centerLat.toFixed(5)}° N &nbsp; Lng: ${props.centerLng.toFixed(5)}° E</div><div style="font-size: 10px; color: #0284c7; font-weight: 600;">Baganga, Davao Oriental</div>`;
         layer.bindTooltip(labelText, {
           sticky: true,
           direction: 'auto'
@@ -97,10 +97,11 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
       }
     }).addTo(map);
 
-    map.fitBounds(geoJsonLayer.getBounds(), { padding: [25, 25] });
+    const bagangaBounds = geoJsonLayer.getBounds();
+    map.fitBounds(bagangaBounds, { padding: [25, 25] });
 
     if (onInitMap) {
-      onInitMap(map);
+      onInitMap(map, bagangaBounds);
     }
 
     const refreshMap = () => {

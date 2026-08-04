@@ -94,6 +94,18 @@ export const DemographicsCard: React.FC<DemographicsCardProps> = ({
               <span className="block text-[10px] text-slate-400 font-medium uppercase">Vulnerability</span>
               <span className="font-semibold text-emerald-300">{activeBarangay.vulnerabilityRating}</span>
             </div>
+            <div>
+              <span className="block text-[10px] text-slate-400 font-medium uppercase">Latitude</span>
+              <span className="font-semibold text-slate-200 tabular-nums">
+                {activeBarangay.centerLat.toFixed(5)}° N
+              </span>
+            </div>
+            <div>
+              <span className="block text-[10px] text-slate-400 font-medium uppercase">Longitude</span>
+              <span className="font-semibold text-slate-200 tabular-nums">
+                {activeBarangay.centerLng.toFixed(5)}° E
+              </span>
+            </div>
           </div>
         </div>
       ) : (

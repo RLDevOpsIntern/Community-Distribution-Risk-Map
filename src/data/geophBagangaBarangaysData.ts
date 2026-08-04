@@ -1,4 +1,4 @@
-import type { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import type { FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson';
 import geophBagangaGeoJSONRaw from './geophBagangaBarangays.json';
 
 export interface BagangaBarangayProperties {
@@ -71,30 +71,57 @@ function getDensityCategory(population: number): string {
   return '< 1,500';
 }
 
-function getGeometryCenter(geometry: BagangaGeometry): { lat: number; lng: number } {
-  let latitudeTotal = 0;
-  let longitudeTotal = 0;
-  let pointCount = 0;
+function getRingCentroid(ring: Position[]): { area: number; lat: number; lng: number } | null {
+  let twiceSignedArea = 0;
+  let longitudeNumerator = 0;
+  let latitudeNumerator = 0;
 
-  const visitCoordinates = (value: unknown): void => {
-    if (!Array.isArray(value)) return;
+  for (let index = 0; index < ring.length - 1; index += 1) {
+    const [longitudeA, latitudeA] = ring[index];
+    const [longitudeB, latitudeB] = ring[index + 1];
+    const crossProduct = longitudeA * latitudeB - longitudeB * latitudeA;
 
-    if (typeof value[0] === 'number' && typeof value[1] === 'number') {
-      longitudeTotal += value[0];
-      latitudeTotal += value[1];
-      pointCount += 1;
-      return;
-    }
+    twiceSignedArea += crossProduct;
+    longitudeNumerator += (longitudeA + longitudeB) * crossProduct;
+    latitudeNumerator += (latitudeA + latitudeB) * crossProduct;
+  }
 
-    value.forEach(visitCoordinates);
-  };
-
-  visitCoordinates(geometry.coordinates);
+  if (Math.abs(twiceSignedArea) < Number.EPSILON) return null;
 
   return {
-    lat: pointCount ? latitudeTotal / pointCount : 0,
-    lng: pointCount ? longitudeTotal / pointCount : 0
+    area: Math.abs(twiceSignedArea / 2),
+    lng: longitudeNumerator / (3 * twiceSignedArea),
+    lat: latitudeNumerator / (3 * twiceSignedArea)
   };
+}
+
+function getGeometryCenter(geometry: BagangaGeometry): { lat: number; lng: number } {
+  const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+  let weightedLatitude = 0;
+  let weightedLongitude = 0;
+  let totalArea = 0;
+
+  polygons.forEach((polygon) => {
+    polygon.forEach((ring, ringIndex) => {
+      const centroid = getRingCentroid(ring);
+      if (!centroid) return;
+
+      // Interior rings are holes and must be subtracted from the outer ring.
+      const areaWeight = ringIndex === 0 ? centroid.area : -centroid.area;
+      weightedLatitude += centroid.lat * areaWeight;
+      weightedLongitude += centroid.lng * areaWeight;
+      totalArea += areaWeight;
+    });
+  });
+
+  if (totalArea > 0) {
+    return {
+      lat: weightedLatitude / totalArea,
+      lng: weightedLongitude / totalArea
+    };
+  }
+
+  throw new Error('Unable to calculate a centroid for an empty or invalid barangay geometry');
 }
 
 const geophCollection = geophBagangaGeoJSONRaw as unknown as FeatureCollection<

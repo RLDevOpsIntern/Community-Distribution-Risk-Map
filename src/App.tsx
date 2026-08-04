@@ -10,9 +10,11 @@ function App() {
   const [hoveredBarangay, setHoveredBarangay] = useState<BagangaBarangayProperties | null>(null);
   const [selectedBarangay, setSelectedBarangay] = useState<BagangaBarangayProperties | null>(null);
   const mapRef = useRef<L.Map | null>(null);
+  const initialMapBoundsRef = useRef<L.LatLngBounds | null>(null);
 
-  const handleInitMap = useCallback((map: L.Map) => {
+  const handleInitMap = useCallback((map: L.Map, bounds: L.LatLngBounds) => {
     mapRef.current = map;
+    initialMapBoundsRef.current = bounds;
   }, []);
 
   const handleZoomIn = useCallback(() => {
@@ -24,6 +26,16 @@ function App() {
   const handleZoomOut = useCallback(() => {
     if (mapRef.current) {
       mapRef.current.zoomOut();
+    }
+  }, []);
+
+  const handleRecenterMap = useCallback(() => {
+    if (mapRef.current && initialMapBoundsRef.current) {
+      mapRef.current.stop();
+      mapRef.current.flyToBounds(initialMapBoundsRef.current, {
+        padding: [25, 25],
+        duration: 0.65
+      });
     }
   }, []);
 
@@ -72,6 +84,7 @@ function App() {
             <ZoomControls
               onZoomIn={handleZoomIn}
               onZoomOut={handleZoomOut}
+              onRecenter={handleRecenterMap}
             />
           </div>
 
