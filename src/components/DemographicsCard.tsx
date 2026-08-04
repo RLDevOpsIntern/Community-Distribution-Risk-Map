@@ -1,10 +1,10 @@
 import React from 'react';
-import type { BarangayFeatureProperties } from '../data/barangaysData';
-import { POPULATION_COLOR_MAP } from '../data/barangaysData';
+import type { BagangaBarangayProperties } from '../data/geophBagangaBarangaysData';
+import { BAGANGA_COLOR_MAP } from '../data/geophBagangaBarangaysData';
 
 interface DemographicsCardProps {
-  selectedBarangay: BarangayFeatureProperties | null;
-  hoveredBarangay: BarangayFeatureProperties | null;
+  selectedBarangay: BagangaBarangayProperties | null;
+  hoveredBarangay: BagangaBarangayProperties | null;
   onClearSelection?: () => void;
 }
 
@@ -16,11 +16,11 @@ export const DemographicsCard: React.FC<DemographicsCardProps> = ({
   const activeBarangay = selectedBarangay || hoveredBarangay;
 
   const ranges = [
-    { label: '< 5,000', color: POPULATION_COLOR_MAP.LIGHT_BLUE, text: 'Light Blue' },
-    { label: '5,000 - 10,000', color: POPULATION_COLOR_MAP.TEAL, text: 'Teal/Green' },
-    { label: '10,000 - 15,000', color: POPULATION_COLOR_MAP.YELLOW, text: 'Yellow' },
-    { label: '15,000 - 20,000', color: POPULATION_COLOR_MAP.ORANGE, text: 'Orange' },
-    { label: '20,000+', color: POPULATION_COLOR_MAP.RED, text: 'Red/Coral' }
+    { label: '< 1,500', color: BAGANGA_COLOR_MAP.LIGHT_BLUE, text: 'Light Blue' },
+    { label: '1,500 - 3,000', color: BAGANGA_COLOR_MAP.TEAL, text: 'Teal/Green' },
+    { label: '3,000 - 5,000', color: BAGANGA_COLOR_MAP.YELLOW, text: 'Yellow' },
+    { label: '5,000 - 8,000', color: BAGANGA_COLOR_MAP.ORANGE, text: 'Orange' },
+    { label: '8,000+', color: BAGANGA_COLOR_MAP.RED, text: 'Red/Coral' }
   ];
 
   return (
@@ -29,7 +29,7 @@ export const DemographicsCard: React.FC<DemographicsCardProps> = ({
       <div className="flex items-center justify-between border-b border-slate-100 pb-3">
         <div>
           <h2 className="text-lg font-bold tracking-tight text-slate-900">Demographics</h2>
-          <p className="text-xs text-slate-500 font-medium">Quezon City GIS Choropleth</p>
+          <p className="text-xs text-slate-500 font-medium">Baganga, Davao Oriental GIS</p>
         </div>
         <span className="bg-emerald-100 text-emerald-800 text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-1 rounded-full">
           Active Filter
@@ -75,7 +75,7 @@ export const DemographicsCard: React.FC<DemographicsCardProps> = ({
             </span>
           </div>
           <h4 className="text-base font-extrabold tracking-tight">
-            Barangay {activeBarangay.name} ({activeBarangay.barangayNumber})
+            Barangay {activeBarangay.name}
           </h4>
           <div className="grid grid-cols-2 gap-2 mt-1 pt-2 border-t border-slate-700/60 text-xs">
             <div>
@@ -86,12 +86,20 @@ export const DemographicsCard: React.FC<DemographicsCardProps> = ({
               <span className="block text-[10px] text-slate-400 font-medium uppercase">Density Range</span>
               <span className="font-semibold text-slate-200">{activeBarangay.densityCategory}</span>
             </div>
+            <div>
+              <span className="block text-[10px] text-slate-400 font-medium uppercase">Land Area</span>
+              <span className="font-semibold text-slate-200">{activeBarangay.areaKm2} km²</span>
+            </div>
+            <div>
+              <span className="block text-[10px] text-slate-400 font-medium uppercase">Vulnerability</span>
+              <span className="font-semibold text-emerald-300">{activeBarangay.vulnerabilityRating}</span>
+            </div>
           </div>
         </div>
       ) : (
         <div className="bg-slate-100/90 border border-slate-200/80 p-3.5 rounded-xl text-center">
           <p className="text-xs text-slate-600 font-medium leading-relaxed">
-            Hover or select a barangay to view details.
+            Hover or select a barangay in Baganga to view details.
           </p>
         </div>
       )}

@@ -2,15 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {
-  barangaysGeoJSON,
-  POPULATION_COLOR_MAP,
-  type BarangayFeatureProperties
-} from '../data/barangaysData';
+  bagangaBarangaysGeoJSON,
+  BAGANGA_COLOR_MAP,
+  type BagangaBarangayProperties
+} from '../data/geophBagangaBarangaysData';
 
 interface ChoroplethMapProps {
-  onHoverBarangay: (b: BarangayFeatureProperties | null) => void;
-  onSelectBarangay: (b: BarangayFeatureProperties | null) => void;
-  selectedBarangay: BarangayFeatureProperties | null;
+  onHoverBarangay: (b: BagangaBarangayProperties | null) => void;
+  onSelectBarangay: (b: BagangaBarangayProperties | null) => void;
+  selectedBarangay: BagangaBarangayProperties | null;
   onInitMap?: (map: L.Map) => void;
 }
 
@@ -23,22 +23,21 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
   const mapRef = useRef<L.Map | null>(null);
 
   const getBarangayColor = (pop: number) => {
-    if (pop >= 20000) return POPULATION_COLOR_MAP.RED;
-    if (pop >= 15000) return POPULATION_COLOR_MAP.ORANGE;
-    if (pop >= 10000) return POPULATION_COLOR_MAP.YELLOW;
-    if (pop >= 5000) return POPULATION_COLOR_MAP.TEAL;
-    return POPULATION_COLOR_MAP.LIGHT_BLUE;
+    if (pop >= 8000) return BAGANGA_COLOR_MAP.RED;
+    if (pop >= 5000) return BAGANGA_COLOR_MAP.ORANGE;
+    if (pop >= 3000) return BAGANGA_COLOR_MAP.YELLOW;
+    if (pop >= 1500) return BAGANGA_COLOR_MAP.TEAL;
+    return BAGANGA_COLOR_MAP.LIGHT_BLUE;
   };
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
 
-    // Initialize Leaflet Map over Quezon City
+    // Initialize Leaflet Map over Baganga Municipality, Davao Oriental
     const map = L.map(mapContainerRef.current, {
-      center: [14.676, 121.044],
-      zoom: 12,
-      zoomControl: false,
-      attributionControl: false
+      center: [7.592, 126.412],
+      zoom: 11,
+      zoomControl: false
     });
 
     mapRef.current = map;
@@ -46,26 +45,30 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
     // Add Tile Layer (OpenStreetMap basemap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
-      attribution: '© OpenStreetMap'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Style and Add Real Quezon City Barangay Boundary Layer
-    const geoJsonLayer = L.geoJSON(barangaysGeoJSON as any, {
+    map.attributionControl.addAttribution(
+      'Boundaries: <a href="https://github.com/OSSPhilippines/geoph/tree/06e792bd6c241c57f8c3946b648381ae8a328846/geojson/barangay">GeoPH</a>'
+    );
+
+    // Style and Add Baganga Barangay Boundary Layer
+    const geoJsonLayer = L.geoJSON(bagangaBarangaysGeoJSON as any, {
       style: (feature) => {
         const pop = feature?.properties?.population || 0;
         return {
           fillColor: getBarangayColor(pop),
-          weight: 1.5,
+          weight: 1.8,
           opacity: 1,
           color: '#ffffff',
           fillOpacity: 0.75
         };
       },
       onEachFeature: (feature, layer) => {
-        const props = feature.properties as BarangayFeatureProperties;
+        const props = feature.properties as BagangaBarangayProperties;
 
         // Tooltip popup showing Barangay Name and Population
-        const labelText = `<div style="font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700;">${props.name}</div><div style="font-size: 11px; color: #475569;">Population: ${props.formattedPop}</div>`;
+        const labelText = `<div style="font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700;">Barangay ${props.name}</div><div style="font-size: 11px; color: #475569;">Population: ${props.formattedPop}</div><div style="font-size: 10px; color: #0284c7; font-weight: 600;">Baganga, Davao Oriental</div>`;
         layer.bindTooltip(labelText, {
           sticky: true,
           direction: 'auto'
@@ -94,7 +97,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
       }
     }).addTo(map);
 
-    map.fitBounds(geoJsonLayer.getBounds(), { padding: [20, 20] });
+    map.fitBounds(geoJsonLayer.getBounds(), { padding: [25, 25] });
 
     if (onInitMap) {
       onInitMap(map);
@@ -102,7 +105,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
 
     const refreshMap = () => {
       map.invalidateSize();
-      map.fitBounds(geoJsonLayer.getBounds(), { padding: [20, 20] });
+      map.fitBounds(geoJsonLayer.getBounds(), { padding: [25, 25] });
     };
 
     refreshMap();
@@ -112,7 +115,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
     return () => {
       map.remove();
     };
-  }, []);
+  }, [onHoverBarangay, onSelectBarangay, onInitMap]);
 
   return (
     <div className="relative w-full h-full min-h-[540px]">

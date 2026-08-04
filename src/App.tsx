@@ -3,12 +3,12 @@ import L from 'leaflet';
 import { ChoroplethMap } from './components/ChoroplethMap';
 import { ZoomControls } from './components/ZoomControls';
 import { DemographicsCard } from './components/DemographicsCard';
-import type { BarangayFeatureProperties } from './data/barangaysData';
+import type { BagangaBarangayProperties } from './data/geophBagangaBarangaysData';
 
 function App() {
   const [activeTab, setActiveTab] = useState<'Population' | 'Health Risk' | 'Vulnerability' | 'Social Assistance'>('Population');
-  const [hoveredBarangay, setHoveredBarangay] = useState<BarangayFeatureProperties | null>(null);
-  const [selectedBarangay, setSelectedBarangay] = useState<BarangayFeatureProperties | null>(null);
+  const [hoveredBarangay, setHoveredBarangay] = useState<BagangaBarangayProperties | null>(null);
+  const [selectedBarangay, setSelectedBarangay] = useState<BagangaBarangayProperties | null>(null);
   const mapRef = useRef<L.Map | null>(null);
 
   const handleInitMap = useCallback((map: L.Map) => {
@@ -34,11 +34,19 @@ function App() {
       {/* Main Container Card */}
       <div className="w-full max-w-6xl bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-8 flex flex-col gap-6">
         
-        {/* Header Bar with Tabs */}
+        {/* Header Bar with Location Badge and Tabs */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-          <h1 className="text-sm font-extrabold tracking-wider text-slate-600 uppercase">
-            COMMUNITY DISTRIBUTION AND RISK MAP
-          </h1>
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="bg-sky-100 text-sky-800 text-[10px] uppercase font-black tracking-wider px-2 py-0.5 rounded-md border border-sky-200">
+                Davao Oriental • Region XI
+              </span>
+            </div>
+            <h1 className="text-base font-black tracking-wide text-slate-800 uppercase">
+              BAGANGA MUNICIPALITY - COMMUNITY DISTRIBUTION & RISK MAP
+            </h1>
+          </div>
+
           <div className="flex items-center gap-2 bg-slate-50 p-1.5 rounded-xl border border-slate-200/80">
             {tabs.map((tab) => (
               <button
