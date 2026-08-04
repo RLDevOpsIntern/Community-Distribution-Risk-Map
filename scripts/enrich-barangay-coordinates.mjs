@@ -97,6 +97,19 @@ function normalizeCity(value) {
     .replace(/^caloocan$/, 'kalookan');
 }
 
+function normalizeAdminCity(province, city) {
+  const normalizedProvince = normalizeProvince(province);
+  const normalizedCity = normalizeCity(city);
+  const manilaSubmunicipalities = new Set([
+    'binondo', 'ermita', 'intramuros', 'malate', 'paco', 'pandacan', 'port area',
+    'quiapo', 'sampaloc', 'san andres', 'san miguel', 'san nicolas', 'santa ana',
+    'santa cruz', 'tondo i ii',
+  ]);
+  return normalizedProvince === 'metropolitan manila' && manilaSubmunicipalities.has(normalizedCity)
+    ? 'manila'
+    : normalizedCity;
+}
+
 function normalizeBarangay(value) {
   return normalize(value)
     .replace(/\bnio\b/g, 'nino')
@@ -271,7 +284,7 @@ function loadGeoPhRecords(directory) {
 function prepare(records) {
   for (const record of records) {
     record.nProvince = normalizeProvince(record.province);
-    record.nCity = normalizeCity(record.city);
+    record.nCity = normalizeAdminCity(record.province, record.city);
     record.nBarangay = normalizeBarangay(record.barangay);
     record.group = key(record.nProvince, record.nCity);
   }
@@ -428,7 +441,7 @@ for (const required of ['input', 'output', 'psgc-dir', 'modern-geometry-dir', 'g
 const rows = parseCsv(fs.readFileSync(args.input, 'utf8'));
 for (const row of rows) {
   row.nProvince = normalizeProvince(row.province);
-  row.nCity = normalizeCity(row.municipality_city);
+  row.nCity = normalizeAdminCity(row.province, row.municipality_city);
   row.nBarangay = normalizeBarangay(row.barangay);
   row.group = key(row.nProvince, row.nCity);
 }
@@ -487,4 +500,4 @@ const report = {
   })),
 };
 if (args.report) fs.writeFileSync(args.report, `${JSON.stringify(report, null, 2)}\n`);
-console.log(JSON.stringify(report, null, 2));
+console.log(JSON.stringify({ ...report, fallbackRows: undefined }, null, 2));

@@ -1,0 +1,235 @@
+{
+  "inputRows": 42028,
+  "outputRows": 42028,
+  "officialBoundaryRecords": 41096,
+  "geoPhBoundaryRecords": 41743,
+  "fallbackCount": 31,
+  "methodCounts": {
+    "PSGC 2023:exact_admin_names": 38787,
+    "PSGC 2023:unique_city_and_barangay": 2164,
+    "GeoPH:exact_admin_names": 935,
+    "PSGC 2023:unique_province_and_barangay": 70,
+    "PSGC 2023:fuzzy_name_reconciliation": 33,
+    "municipality_average_fallback": 31,
+    "PSGC 2023:reconciled_municipality_transfer": 8
+  },
+  "fallbackRows": [
+    {
+      "id": "37658",
+      "province": "south cotabato",
+      "municipality_city": "tupi",
+      "barangay": "juan-loreto tamayo",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "15136",
+      "province": "quezon",
+      "municipality_city": "sariaya",
+      "barangay": "concepcion 1",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "40186",
+      "province": "lanao del sur",
+      "municipality_city": "marawi city",
+      "barangay": "angoyao",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "40187",
+      "province": "lanao del sur",
+      "municipality_city": "marawi city",
+      "barangay": "sultan corobong",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "40188",
+      "province": "lanao del sur",
+      "municipality_city": "marawi city",
+      "barangay": "sultan panoroganan",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "29033",
+      "province": "leyte",
+      "municipality_city": "la paz",
+      "barangay": "gimiranat east",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "29034",
+      "province": "leyte",
+      "municipality_city": "la paz",
+      "barangay": "gimiranat west",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "28950",
+      "province": "leyte",
+      "municipality_city": "javier",
+      "barangay": "casulongan",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "28710",
+      "province": "leyte",
+      "municipality_city": "dagami",
+      "barangay": "lapu-lapu",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "16724",
+      "province": "palawan",
+      "municipality_city": "culion",
+      "barangay": "carabao",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "38942",
+      "province": "surigao del sur",
+      "municipality_city": "barobo",
+      "barangay": "guinhalinan",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "12750",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "P.F. espiritu II (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "12735",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "P.F. espiritu III (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "12751",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "P.F. espiritu IV (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "12736",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "P.F. espiritu V (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "188",
+      "province": "ncr",
+      "municipality_city": "caloocan city",
+      "barangay": "barangay 176-a",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "189",
+      "province": "ncr",
+      "municipality_city": "caloocan city",
+      "barangay": "barangay 176-b",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "190",
+      "province": "ncr",
+      "municipality_city": "caloocan city",
+      "barangay": "barangay 176-c",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "191",
+      "province": "ncr",
+      "municipality_city": "caloocan city",
+      "barangay": "barangay 176-d",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "192",
+      "province": "ncr",
+      "municipality_city": "caloocan city",
+      "barangay": "barangay 176-e",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "193",
+      "province": "ncr",
+      "municipality_city": "caloocan city",
+      "barangay": "barangay 176-f",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "403",
+      "province": "ncr",
+      "municipality_city": "tondo i/ii",
+      "barangay": "barangay 128",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900006",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "camella springville",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900012",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "p.f. espiritu VII (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900013",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "p.f. espiritu VIII (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "12719",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "P.F. espiritu I poblacion (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "12737",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "P.F. espiritu VI (panapaan)",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900031",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "villar sipag i",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900034",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "villar sipag ii",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900035",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "villar sipag iii",
+      "method": "municipality_average_fallback"
+    },
+    {
+      "id": "900036",
+      "province": "cavite",
+      "municipality_city": "bacoor city",
+      "barangay": "villar sipag iv",
+      "method": "municipality_average_fallback"
+    }
+  ]
+}
