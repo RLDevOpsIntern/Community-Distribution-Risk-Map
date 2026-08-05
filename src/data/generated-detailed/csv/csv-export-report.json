@@ -1,0 +1,2213 @@
+{
+  "sourceFiles": {
+    "detailedGeoJSON": "/Users/johndoe/Documents/Community-Distribution-Risk-Map/src/data/generated-detailed/philippines-barangays-detailed.geojson",
+    "coordinateCSV": "/Users/johndoe/Documents/Community-Distribution-Risk-Map/src/data/studio_results_20260804_1119_with_coordinates.csv"
+  },
+  "outputFile": "/Users/johndoe/Documents/Community-Distribution-Risk-Map/src/data/generated-detailed/csv/studio_results_20260804_1119_with_detailed_boundaries.csv",
+  "summary": {
+    "geoJsonFeatures": 41803,
+    "coordinateRows": 42028,
+    "exportedRows": 41803,
+    "unusedCoordinateRows": 251,
+    "coordinateFallbackRows": 26
+  },
+  "matchCounts": {
+    "psgc_code": 40880,
+    "unique_admin_names": 897,
+    "coordinate_geometry_fallback": 26
+  },
+  "coordinateFallbackFeatures": [
+    {
+      "barangayCode": "0102910008",
+      "region": "Region I (Ilocos Region)",
+      "province": "Ilocos Sur",
+      "municipalityCity": "Gregorio del Pilar (Concepcion)",
+      "barangay": "Poblacion Sur"
+    },
+    {
+      "barangayCode": "0402103018",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Cavite",
+      "municipalityCity": "Bacoor City",
+      "barangay": "P.F. Espiritu 1"
+    },
+    {
+      "barangayCode": "0402103043",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Cavite",
+      "municipalityCity": "Bacoor City",
+      "barangay": "Mambog 4"
+    },
+    {
+      "barangayCode": "0402103055",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Cavite",
+      "municipalityCity": "Bacoor City",
+      "barangay": "P.F. Espiritu 3"
+    },
+    {
+      "barangayCode": "0402103058",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Cavite",
+      "municipalityCity": "Bacoor City",
+      "barangay": "P.F. Espiritu 5"
+    },
+    {
+      "barangayCode": "0402103059",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Cavite",
+      "municipalityCity": "Bacoor City",
+      "barangay": "P.F. Espiritu 6"
+    },
+    {
+      "barangayCode": "0405622095",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Quezon",
+      "municipalityCity": "Lopez",
+      "barangay": "Rizal"
+    },
+    {
+      "barangayCode": "0405645013",
+      "region": "Region IV-A (Calabarzon)",
+      "province": "Quezon",
+      "municipalityCity": "Sariaya",
+      "barangay": "Concepcion No. 1"
+    },
+    {
+      "barangayCode": "0506213048",
+      "region": "Region V (Bicol Region)",
+      "province": "Sorsogon",
+      "municipalityCity": "Pilar",
+      "barangay": "San Antonio"
+    },
+    {
+      "barangayCode": "0506216039",
+      "region": "Region V (Bicol Region)",
+      "province": "Sorsogon",
+      "municipalityCity": "City of Sorsogon (Capital)",
+      "barangay": "Balogo"
+    },
+    {
+      "barangayCode": "0506216043",
+      "region": "Region V (Bicol Region)",
+      "province": "Sorsogon",
+      "municipalityCity": "City of Sorsogon (Capital)",
+      "barangay": "Buenavista"
+    },
+    {
+      "barangayCode": "0506216053",
+      "region": "Region V (Bicol Region)",
+      "province": "Sorsogon",
+      "municipalityCity": "City of Sorsogon (Capital)",
+      "barangay": "Salvacion"
+    },
+    {
+      "barangayCode": "0506216054",
+      "region": "Region V (Bicol Region)",
+      "province": "Sorsogon",
+      "municipalityCity": "City of Sorsogon (Capital)",
+      "barangay": "San Isidro"
+    },
+    {
+      "barangayCode": "0506216055",
+      "region": "Region V (Bicol Region)",
+      "province": "Sorsogon",
+      "municipalityCity": "City of Sorsogon (Capital)",
+      "barangay": "San Juan"
+    },
+    {
+      "barangayCode": "0803710032",
+      "region": "Region VIII (Eastern Visayas)",
+      "province": "Leyte",
+      "municipalityCity": "Burauen",
+      "barangay": "Hibonawan"
+    },
+    {
+      "barangayCode": "0803717040",
+      "region": "Region VIII (Eastern Visayas)",
+      "province": "Leyte",
+      "municipalityCity": "Dagami",
+      "barangay": "Lapu-lapu Pob."
+    },
+    {
+      "barangayCode": "0803724009",
+      "region": "Region VIII (Eastern Visayas)",
+      "province": "Leyte",
+      "municipalityCity": "Javier (Bugho)",
+      "barangay": "Casalungan"
+    },
+    {
+      "barangayCode": "0803728015",
+      "region": "Region VIII (Eastern Visayas)",
+      "province": "Leyte",
+      "municipalityCity": "La Paz",
+      "barangay": "Gimenarat East"
+    },
+    {
+      "barangayCode": "0803728016",
+      "region": "Region VIII (Eastern Visayas)",
+      "province": "Leyte",
+      "municipalityCity": "La Paz",
+      "barangay": "Gimenarat West"
+    },
+    {
+      "barangayCode": "0931700027",
+      "region": "Region IX (Zamboanga Peninsula)",
+      "province": "Zamboanga del Sur",
+      "municipalityCity": "Zamboanga City",
+      "barangay": "Dulian"
+    },
+    {
+      "barangayCode": "0990101041",
+      "region": "Region IX (Zamboanga Peninsula)",
+      "province": "City of Isabela (not a province)",
+      "municipalityCity": "City of Isabela",
+      "barangay": "Riverside"
+    },
+    {
+      "barangayCode": "1102317012",
+      "region": "Region XI (Davao Region)",
+      "province": "Davao del Norte",
+      "municipalityCity": "Island Garden City of Samal",
+      "barangay": "Cogon"
+    },
+    {
+      "barangayCode": "1102317033",
+      "region": "Region XI (Davao Region)",
+      "province": "Davao del Norte",
+      "municipalityCity": "Island Garden City of Samal",
+      "barangay": "San Isidro"
+    },
+    {
+      "barangayCode": "1380100176",
+      "region": "National Capital Region (NCR)",
+      "province": "Metropolitan Manila Third District",
+      "municipalityCity": "Caloocan City",
+      "barangay": "Barangay 176"
+    },
+    {
+      "barangayCode": "1705322014",
+      "region": "Mimaropa Region",
+      "province": "Palawan",
+      "municipalityCity": "Culion",
+      "barangay": "De Carabao"
+    },
+    {
+      "barangayCode": "1908821013",
+      "region": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "province": "Maguindanao del Sur",
+      "municipalityCity": "Shariff Saydona Mustapha",
+      "barangay": "Pagatin"
+    }
+  ],
+  "unusedCoordinates": [
+    {
+      "id": "33758",
+      "region": "zamboanga peninsula",
+      "province": "zamboanga del sur",
+      "municipalityCity": "zamboanga city",
+      "barangay": "latuan",
+      "coordinateSourceId": "931700039"
+    },
+    {
+      "id": "37658",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "tupi",
+      "barangay": "juan-loreto tamayo",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "41936",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "talayan",
+      "barangay": "boboguiron",
+      "coordinateSourceId": "1908824003"
+    },
+    {
+      "id": "41937",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "talayan",
+      "barangay": "damablac",
+      "coordinateSourceId": "1908824004"
+    },
+    {
+      "id": "41938",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "talayan",
+      "barangay": "fugotan",
+      "coordinateSourceId": "1908824005"
+    },
+    {
+      "id": "41939",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "talayan",
+      "barangay": "fukol",
+      "coordinateSourceId": "1908824006"
+    },
+    {
+      "id": "41940",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "talayan",
+      "barangay": "katibpuan",
+      "coordinateSourceId": "1908824007"
+    },
+    {
+      "id": "41943",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "talayan",
+      "barangay": "linamunan",
+      "coordinateSourceId": "1908824010"
+    },
+    {
+      "id": "31787",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 6-a",
+      "coordinateSourceId": "831600013"
+    },
+    {
+      "id": "31794",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 103-a",
+      "coordinateSourceId": "831600022"
+    },
+    {
+      "id": "31810",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 21-a",
+      "coordinateSourceId": "831600043"
+    },
+    {
+      "id": "31825",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 35-a",
+      "coordinateSourceId": "831600058"
+    },
+    {
+      "id": "31828",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 37-a",
+      "coordinateSourceId": "831600061"
+    },
+    {
+      "id": "31835",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 43-a",
+      "coordinateSourceId": "831600068"
+    },
+    {
+      "id": "31836",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 43-b",
+      "coordinateSourceId": "831600069"
+    },
+    {
+      "id": "31838",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 44-a",
+      "coordinateSourceId": "831600071"
+    },
+    {
+      "id": "31845",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 50-a",
+      "coordinateSourceId": "831600078"
+    },
+    {
+      "id": "31846",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 50-b",
+      "coordinateSourceId": "831600079"
+    },
+    {
+      "id": "31857",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 60-a",
+      "coordinateSourceId": "831600090"
+    },
+    {
+      "id": "31864",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 66-a",
+      "coordinateSourceId": "831600097"
+    },
+    {
+      "id": "31882",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 83-a",
+      "coordinateSourceId": "831600116"
+    },
+    {
+      "id": "31900",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 109-a",
+      "coordinateSourceId": "831600135"
+    },
+    {
+      "id": "31902",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 5-a",
+      "coordinateSourceId": "831600137"
+    },
+    {
+      "id": "31903",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 36-a",
+      "coordinateSourceId": "831600138"
+    },
+    {
+      "id": "31904",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 42-a",
+      "coordinateSourceId": "831600139"
+    },
+    {
+      "id": "31905",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 48-a",
+      "coordinateSourceId": "831600140"
+    },
+    {
+      "id": "31906",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 48-b",
+      "coordinateSourceId": "831600141"
+    },
+    {
+      "id": "31907",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 51-a",
+      "coordinateSourceId": "831600142"
+    },
+    {
+      "id": "31908",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 54-a",
+      "coordinateSourceId": "831600143"
+    },
+    {
+      "id": "31909",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 56-a",
+      "coordinateSourceId": "831600145"
+    },
+    {
+      "id": "31910",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 59-a",
+      "coordinateSourceId": "831600146"
+    },
+    {
+      "id": "31911",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 59-b",
+      "coordinateSourceId": "831600147"
+    },
+    {
+      "id": "31912",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 62-a",
+      "coordinateSourceId": "831600148"
+    },
+    {
+      "id": "31913",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 62-b",
+      "coordinateSourceId": "831600149"
+    },
+    {
+      "id": "31914",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 83-b",
+      "coordinateSourceId": "831600150"
+    },
+    {
+      "id": "31915",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 83-c",
+      "coordinateSourceId": "831600151"
+    },
+    {
+      "id": "31916",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 95-a",
+      "coordinateSourceId": "831600152"
+    },
+    {
+      "id": "31917",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 8-a",
+      "coordinateSourceId": "831600153"
+    },
+    {
+      "id": "31918",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 23-a",
+      "coordinateSourceId": "831600154"
+    },
+    {
+      "id": "31919",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "tacloban city",
+      "barangay": "barangay 94-a",
+      "coordinateSourceId": "831600155"
+    },
+    {
+      "id": "41931",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "sultan sa barongis",
+      "barangay": "papakan",
+      "coordinateSourceId": "1908823010"
+    },
+    {
+      "id": "41578",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "sultan kudarat",
+      "barangay": "alamada",
+      "coordinateSourceId": "1908710001"
+    },
+    {
+      "id": "41579",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "sultan kudarat",
+      "barangay": "banatin",
+      "coordinateSourceId": "1908710002"
+    },
+    {
+      "id": "41580",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "sultan kudarat",
+      "barangay": "banubo",
+      "coordinateSourceId": "1908710003"
+    },
+    {
+      "id": "41581",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "sultan kudarat",
+      "barangay": "bulalo",
+      "coordinateSourceId": "1908710004"
+    },
+    {
+      "id": "41582",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "sultan kudarat",
+      "barangay": "bulibod",
+      "coordinateSourceId": "1908710005"
+    },
+    {
+      "id": "41583",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "sultan kudarat",
+      "barangay": "calsada",
+      "coordinateSourceId": "1908710006"
+    },
+    {
+      "id": "41886",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "shariff aguak",
+      "barangay": "lapok",
+      "coordinateSourceId": "1908820005"
+    },
+    {
+      "id": "15136",
+      "region": "calabarzon",
+      "province": "quezon",
+      "municipalityCity": "sariaya",
+      "barangay": "concepcion 1",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "17025",
+      "region": "mimaropa",
+      "province": "palawan",
+      "municipalityCity": "puerto princesa  city",
+      "barangay": "inagawan sub-colony",
+      "coordinateSourceId": "1731500063"
+    },
+    {
+      "id": "41562",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "parang",
+      "barangay": "landasan",
+      "coordinateSourceId": "1908709010"
+    },
+    {
+      "id": "41563",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "parang",
+      "barangay": "limbayan",
+      "coordinateSourceId": "1908709011"
+    },
+    {
+      "id": "41576",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "parang",
+      "barangay": "tagudtongan",
+      "coordinateSourceId": "1908709024"
+    },
+    {
+      "id": "41977",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pahamuddin",
+      "barangay": "balacayon",
+      "coordinateSourceId": "1999905001"
+    },
+    {
+      "id": "41985",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pahamuddin",
+      "barangay": "matilac",
+      "coordinateSourceId": "1999905009"
+    },
+    {
+      "id": "41986",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pahamuddin",
+      "barangay": "patot",
+      "coordinateSourceId": "1999905010"
+    },
+    {
+      "id": "41843",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagalungan",
+      "barangay": "bagoenged",
+      "coordinateSourceId": "1908816001"
+    },
+    {
+      "id": "41844",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagalungan",
+      "barangay": "buliok",
+      "coordinateSourceId": "1908816002"
+    },
+    {
+      "id": "41846",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagalungan",
+      "barangay": "damalasak",
+      "coordinateSourceId": "1908816004"
+    },
+    {
+      "id": "41832",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "balatungkayo",
+      "coordinateSourceId": "1908815001"
+    },
+    {
+      "id": "41833",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "bulit",
+      "coordinateSourceId": "1908815002"
+    },
+    {
+      "id": "41834",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "bulod",
+      "coordinateSourceId": "1908815003"
+    },
+    {
+      "id": "41835",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "dungguan",
+      "coordinateSourceId": "1908815004"
+    },
+    {
+      "id": "41836",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "limbalud",
+      "coordinateSourceId": "1908815005"
+    },
+    {
+      "id": "41837",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "maridagao",
+      "coordinateSourceId": "1908815006"
+    },
+    {
+      "id": "41838",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "nabundas",
+      "coordinateSourceId": "1908815007"
+    },
+    {
+      "id": "41839",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "pagagawan",
+      "coordinateSourceId": "1908815008"
+    },
+    {
+      "id": "41840",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "talapas",
+      "coordinateSourceId": "1908815009"
+    },
+    {
+      "id": "41841",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "talitay",
+      "coordinateSourceId": "1908815010"
+    },
+    {
+      "id": "41842",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "pagagawan",
+      "barangay": "tunggol",
+      "coordinateSourceId": "1908815011"
+    },
+    {
+      "id": "41956",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "old kaabakan",
+      "barangay": "buluan",
+      "coordinateSourceId": "1999902001"
+    },
+    {
+      "id": "41957",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "old kaabakan",
+      "barangay": "nanga-an",
+      "coordinateSourceId": "1999902002"
+    },
+    {
+      "id": "41958",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "old kaabakan",
+      "barangay": "pedtad",
+      "coordinateSourceId": "1999902003"
+    },
+    {
+      "id": "41972",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "nabalawag",
+      "barangay": "kadingilan",
+      "coordinateSourceId": "1999905005"
+    },
+    {
+      "id": "40186",
+      "region": "armm",
+      "province": "lanao del sur",
+      "municipalityCity": "marawi city",
+      "barangay": "angoyao",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "40187",
+      "region": "armm",
+      "province": "lanao del sur",
+      "municipalityCity": "marawi city",
+      "barangay": "sultan corobong",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "40188",
+      "region": "armm",
+      "province": "lanao del sur",
+      "municipalityCity": "marawi city",
+      "barangay": "sultan panoroganan",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "41811",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "mamasapano",
+      "barangay": "dabenayan",
+      "coordinateSourceId": "1908813002"
+    },
+    {
+      "id": "41814",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "mamasapano",
+      "barangay": "liab",
+      "coordinateSourceId": "1908813005"
+    },
+    {
+      "id": "41816",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "mamasapano",
+      "barangay": "lusay",
+      "coordinateSourceId": "1908813007"
+    },
+    {
+      "id": "41818",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "mamasapano",
+      "barangay": "manongkaling",
+      "coordinateSourceId": "1908813009"
+    },
+    {
+      "id": "41819",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "mamasapano",
+      "barangay": "pidsandawan",
+      "coordinateSourceId": "1908813010"
+    },
+    {
+      "id": "41995",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "malidegao",
+      "barangay": "nunguan",
+      "coordinateSourceId": "1999906007"
+    },
+    {
+      "id": "41999",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "ligawasan",
+      "barangay": "bulol",
+      "coordinateSourceId": "1999907004"
+    },
+    {
+      "id": "29033",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "la paz",
+      "barangay": "gimiranat east",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "29034",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "la paz",
+      "barangay": "gimiranat west",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "41949",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "kapalawan",
+      "barangay": "kib-ayao",
+      "coordinateSourceId": "1999901001"
+    },
+    {
+      "id": "41951",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "kapalawan",
+      "barangay": "langogan",
+      "coordinateSourceId": "1999901003"
+    },
+    {
+      "id": "41955",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "kapalawan",
+      "barangay": "tupig",
+      "coordinateSourceId": "1999901007"
+    },
+    {
+      "id": "28950",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "javier",
+      "barangay": "casulongan",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "33712",
+      "region": "zamboanga peninsula",
+      "province": "basilan",
+      "municipalityCity": "isabela city",
+      "barangay": "riverside",
+      "coordinateSourceId": "2855"
+    },
+    {
+      "id": "23732",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "buhang taft north",
+      "coordinateSourceId": "631000025"
+    },
+    {
+      "id": "23754",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "dungon a",
+      "coordinateSourceId": "631000050"
+    },
+    {
+      "id": "23755",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "dungon b",
+      "coordinateSourceId": "631000051"
+    },
+    {
+      "id": "23794",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "lopez jaena norte",
+      "coordinateSourceId": "631000095"
+    },
+    {
+      "id": "23795",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "lopez jaena sur",
+      "coordinateSourceId": "631000096"
+    },
+    {
+      "id": "23802",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "magsaysay village",
+      "coordinateSourceId": "631000103"
+    },
+    {
+      "id": "23846",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "san jose (arevalo)",
+      "coordinateSourceId": "631000155"
+    },
+    {
+      "id": "23850",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "san pedro (jaro)",
+      "coordinateSourceId": "631000159"
+    },
+    {
+      "id": "23863",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "south san jose",
+      "coordinateSourceId": "631000173"
+    },
+    {
+      "id": "23883",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "pale benedicto rizal",
+      "coordinateSourceId": "631000196"
+    },
+    {
+      "id": "23885",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "luna (la paz)",
+      "coordinateSourceId": "631000198"
+    },
+    {
+      "id": "23886",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "san isidro (la paz)",
+      "coordinateSourceId": "631000199"
+    },
+    {
+      "id": "23887",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "san jose (city proper)",
+      "coordinateSourceId": "631000200"
+    },
+    {
+      "id": "23888",
+      "region": "western visayas",
+      "province": "iloilo",
+      "municipalityCity": "iloilo city",
+      "barangay": "tabuc suba (la paz)",
+      "coordinateSourceId": "631000201"
+    },
+    {
+      "id": "35844",
+      "region": "northern mindanao",
+      "province": "lanao del norte",
+      "municipalityCity": "iligan city",
+      "barangay": "upper hinaplanon",
+      "coordinateSourceId": "1030900047"
+    },
+    {
+      "id": "38079",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "baluan",
+      "coordinateSourceId": "1230800003"
+    },
+    {
+      "id": "38080",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "buayan",
+      "coordinateSourceId": "1230800004"
+    },
+    {
+      "id": "38081",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "bula",
+      "coordinateSourceId": "1230800005"
+    },
+    {
+      "id": "38082",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "conel",
+      "coordinateSourceId": "1230800006"
+    },
+    {
+      "id": "38083",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "dadiangas east ",
+      "coordinateSourceId": "1230800007"
+    },
+    {
+      "id": "38084",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "katangawan",
+      "coordinateSourceId": "1230800009"
+    },
+    {
+      "id": "38085",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "lagao",
+      "coordinateSourceId": "1230800011"
+    },
+    {
+      "id": "38086",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "labangal",
+      "coordinateSourceId": "1230800012"
+    },
+    {
+      "id": "38087",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "ligaya",
+      "coordinateSourceId": "1230800015"
+    },
+    {
+      "id": "38088",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "mabuhay",
+      "coordinateSourceId": "1230800016"
+    },
+    {
+      "id": "38089",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "san isidro",
+      "coordinateSourceId": "1230800023"
+    },
+    {
+      "id": "38090",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "san jose",
+      "coordinateSourceId": "1230800024"
+    },
+    {
+      "id": "38091",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "sinawal",
+      "coordinateSourceId": "1230800026"
+    },
+    {
+      "id": "38092",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "tambler",
+      "coordinateSourceId": "1230800027"
+    },
+    {
+      "id": "38093",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "tinagacan",
+      "coordinateSourceId": "1230800028"
+    },
+    {
+      "id": "38094",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "apopong",
+      "coordinateSourceId": "1230800029"
+    },
+    {
+      "id": "38095",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "siguel",
+      "coordinateSourceId": "1230800030"
+    },
+    {
+      "id": "38096",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "upper labay",
+      "coordinateSourceId": "1230800031"
+    },
+    {
+      "id": "38097",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "batomelong",
+      "coordinateSourceId": "1230800032"
+    },
+    {
+      "id": "38098",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "calumpang",
+      "coordinateSourceId": "1230800033"
+    },
+    {
+      "id": "38099",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "city heights",
+      "coordinateSourceId": "1230800034"
+    },
+    {
+      "id": "38102",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "dadiangas west",
+      "coordinateSourceId": "1230800037"
+    },
+    {
+      "id": "38103",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "fatima",
+      "coordinateSourceId": "1230800038"
+    },
+    {
+      "id": "38104",
+      "region": "soccsksargen",
+      "province": "south cotabato",
+      "municipalityCity": "general santos city",
+      "barangay": "olympog",
+      "coordinateSourceId": "1230800039"
+    },
+    {
+      "id": "41780",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "badak",
+      "coordinateSourceId": "1908811001"
+    },
+    {
+      "id": "41781",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "bulod",
+      "coordinateSourceId": "1908811002"
+    },
+    {
+      "id": "41782",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "kaladturan",
+      "coordinateSourceId": "1908811003"
+    },
+    {
+      "id": "41783",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "kulasi",
+      "coordinateSourceId": "1908811004"
+    },
+    {
+      "id": "41784",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "lao-lao",
+      "coordinateSourceId": "1908811005"
+    },
+    {
+      "id": "41785",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "lasangan",
+      "coordinateSourceId": "1908811006"
+    },
+    {
+      "id": "41786",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "lower idtig",
+      "coordinateSourceId": "1908811007"
+    },
+    {
+      "id": "41787",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "lumabao",
+      "coordinateSourceId": "1908811008"
+    },
+    {
+      "id": "41788",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "makainis",
+      "coordinateSourceId": "1908811009"
+    },
+    {
+      "id": "41790",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "gen. s.k. pendatun",
+      "barangay": "midpandacan",
+      "coordinateSourceId": "1908811011"
+    },
+    {
+      "id": "32775",
+      "region": "zamboanga peninsula",
+      "province": "zamboanga del sur",
+      "municipalityCity": "dumingag",
+      "barangay": "dulian",
+      "coordinateSourceId": "40935"
+    },
+    {
+      "id": "36858",
+      "region": "davao",
+      "province": "davao del sur",
+      "municipalityCity": "davao city",
+      "barangay": "crossing bayabas",
+      "coordinateSourceId": "1130700036"
+    },
+    {
+      "id": "36902",
+      "region": "davao",
+      "province": "davao del sur",
+      "municipalityCity": "davao city",
+      "barangay": "new carmen",
+      "coordinateSourceId": "1130700082"
+    },
+    {
+      "id": "36928",
+      "region": "davao",
+      "province": "davao del sur",
+      "municipalityCity": "davao city",
+      "barangay": "talomo river",
+      "coordinateSourceId": "1130700117"
+    },
+    {
+      "id": "41771",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu saudi ampatuan",
+      "barangay": "salbu",
+      "coordinateSourceId": "1908809008"
+    },
+    {
+      "id": "41731",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "alonganan",
+      "coordinateSourceId": "1908807001"
+    },
+    {
+      "id": "41732",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "ambadao",
+      "coordinateSourceId": "1908807002"
+    },
+    {
+      "id": "41733",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "balanakan",
+      "coordinateSourceId": "1908807003"
+    },
+    {
+      "id": "41734",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "balong",
+      "coordinateSourceId": "1908807004"
+    },
+    {
+      "id": "41735",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "buayan",
+      "coordinateSourceId": "1908807005"
+    },
+    {
+      "id": "41736",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "dado",
+      "coordinateSourceId": "1908807006"
+    },
+    {
+      "id": "41737",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "damabalas",
+      "coordinateSourceId": "1908807007"
+    },
+    {
+      "id": "41738",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "duaminanga",
+      "coordinateSourceId": "1908807008"
+    },
+    {
+      "id": "41739",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "kalipapa",
+      "coordinateSourceId": "1908807009"
+    },
+    {
+      "id": "41745",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu piang",
+      "barangay": "poblacion",
+      "coordinateSourceId": "1908807015"
+    },
+    {
+      "id": "41716",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu paglas",
+      "barangay": "katil",
+      "coordinateSourceId": "1908806009"
+    },
+    {
+      "id": "41721",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu paglas",
+      "barangay": "malala",
+      "coordinateSourceId": "1908806014"
+    },
+    {
+      "id": "41723",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu paglas",
+      "barangay": "manindolo",
+      "coordinateSourceId": "1908806016"
+    },
+    {
+      "id": "41730",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "datu paglas",
+      "barangay": "sepaka",
+      "coordinateSourceId": "1908806023"
+    },
+    {
+      "id": "41483",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "ambolodto",
+      "coordinateSourceId": "1908705001"
+    },
+    {
+      "id": "41484",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "awang",
+      "coordinateSourceId": "1908705002"
+    },
+    {
+      "id": "41485",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "badak",
+      "coordinateSourceId": "1908705003"
+    },
+    {
+      "id": "41486",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "bagoenged",
+      "coordinateSourceId": "1908705004"
+    },
+    {
+      "id": "41487",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "baka",
+      "coordinateSourceId": "1908705005"
+    },
+    {
+      "id": "41488",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "benolen",
+      "coordinateSourceId": "1908705006"
+    },
+    {
+      "id": "41489",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "bitu",
+      "coordinateSourceId": "1908705007"
+    },
+    {
+      "id": "41490",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "datu odin sinsuat",
+      "barangay": "bongued",
+      "coordinateSourceId": "1908705008"
+    },
+    {
+      "id": "28710",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "dagami",
+      "barangay": "lapu-lapu",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "16724",
+      "region": "mimaropa",
+      "province": "palawan",
+      "municipalityCity": "culion",
+      "barangay": "carabao",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "27462",
+      "region": "central visayas",
+      "province": "cebu",
+      "municipalityCity": "cebu city",
+      "barangay": "pahina central ",
+      "coordinateSourceId": "730600050"
+    },
+    {
+      "id": "27473",
+      "region": "central visayas",
+      "province": "cebu",
+      "municipalityCity": "cebu city",
+      "barangay": "quiot pardo",
+      "coordinateSourceId": "730600063"
+    },
+    {
+      "id": "27478",
+      "region": "central visayas",
+      "province": "cebu",
+      "municipalityCity": "cebu city",
+      "barangay": "san nicolas central",
+      "coordinateSourceId": "730600068"
+    },
+    {
+      "id": "27495",
+      "region": "central visayas",
+      "province": "cebu",
+      "municipalityCity": "cebu city",
+      "barangay": "to-ong pardo",
+      "coordinateSourceId": "730600086"
+    },
+    {
+      "id": "39380",
+      "region": "caraga",
+      "province": "dinagat islands",
+      "municipalityCity": "butuan  city",
+      "barangay": "manila de bugabus",
+      "coordinateSourceId": "1630400065"
+    },
+    {
+      "id": "3526",
+      "region": "ilocos",
+      "province": "ilocos sur",
+      "municipalityCity": "burgos",
+      "barangay": "poblacion sur",
+      "coordinateSourceId": "14736"
+    },
+    {
+      "id": "41673",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "buluan",
+      "barangay": "digal",
+      "coordinateSourceId": "1908802001"
+    },
+    {
+      "id": "41420",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "buldon",
+      "barangay": "cabayuan",
+      "coordinateSourceId": "1908702003"
+    },
+    {
+      "id": "41421",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "buldon",
+      "barangay": "calaan ",
+      "coordinateSourceId": "1908702004"
+    },
+    {
+      "id": "41423",
+      "region": "armm",
+      "province": "maguindanao del norte",
+      "municipalityCity": "buldon",
+      "barangay": "edcor",
+      "coordinateSourceId": "1908702006"
+    },
+    {
+      "id": "28399",
+      "region": "eastern visayas",
+      "province": "leyte",
+      "municipalityCity": "baybay city",
+      "barangay": "hibunawan",
+      "coordinateSourceId": "21687"
+    },
+    {
+      "id": "38942",
+      "region": "caraga",
+      "province": "surigao del sur",
+      "municipalityCity": "barobo",
+      "barangay": "guinhalinan",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "2891",
+      "region": "cordillera",
+      "province": "apayao",
+      "municipalityCity": "baguio city",
+      "barangay": "magsaysay, upper",
+      "coordinateSourceId": "1430300159"
+    },
+    {
+      "id": "12752",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "poblacion",
+      "coordinateSourceId": "402103086"
+    },
+    {
+      "id": "12755",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "sinbanali",
+      "coordinateSourceId": "402103089"
+    },
+    {
+      "id": "12726",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "ligas II",
+      "coordinateSourceId": "10014"
+    },
+    {
+      "id": "12747",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "maliksi II",
+      "coordinateSourceId": "10020"
+    },
+    {
+      "id": "12748",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "mambog II",
+      "coordinateSourceId": "10023"
+    },
+    {
+      "id": "12727",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "mambog III",
+      "coordinateSourceId": "10024"
+    },
+    {
+      "id": "12728",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "mambog IV",
+      "coordinateSourceId": "10025"
+    },
+    {
+      "id": "12750",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "P.F. espiritu II (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "12735",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "P.F. espiritu III (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "12751",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "P.F. espiritu IV (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "12736",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "P.F. espiritu V (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "12754",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "salinas II",
+      "coordinateSourceId": "10051"
+    },
+    {
+      "id": "12740",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "talaba II",
+      "coordinateSourceId": "10060"
+    },
+    {
+      "id": "12757",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "talaba III",
+      "coordinateSourceId": "10061"
+    },
+    {
+      "id": "12759",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "zapote II",
+      "coordinateSourceId": "10067"
+    },
+    {
+      "id": "12741",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "zapote III",
+      "coordinateSourceId": "10068"
+    },
+    {
+      "id": "11537",
+      "region": "central luzon",
+      "province": "pampanga",
+      "municipalityCity": "angeles city",
+      "barangay": "lourdes sur east",
+      "coordinateSourceId": "330100012"
+    },
+    {
+      "id": "41662",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "ampatuan",
+      "barangay": "dicalongan ",
+      "coordinateSourceId": "1908801001"
+    },
+    {
+      "id": "41663",
+      "region": "armm",
+      "province": "maguindanao del sur",
+      "municipalityCity": "ampatuan",
+      "barangay": "kakal",
+      "coordinateSourceId": "1908801002"
+    },
+    {
+      "id": "188",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "caloocan city",
+      "barangay": "barangay 176-a",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "189",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "caloocan city",
+      "barangay": "barangay 176-b",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "190",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "caloocan city",
+      "barangay": "barangay 176-c",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "191",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "caloocan city",
+      "barangay": "barangay 176-d",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "192",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "caloocan city",
+      "barangay": "barangay 176-e",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "193",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "caloocan city",
+      "barangay": "barangay 176-f",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "923",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "ermita",
+      "barangay": "barangay 659-a",
+      "coordinateSourceId": "25039"
+    },
+    {
+      "id": "925",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "ermita",
+      "barangay": "barangay 660-a",
+      "coordinateSourceId": "25042"
+    },
+    {
+      "id": "933",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "ermita",
+      "barangay": "barangay 663-a",
+      "coordinateSourceId": "25046"
+    },
+    {
+      "id": "998",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "paco",
+      "barangay": "barangay 664-a",
+      "coordinateSourceId": "25048"
+    },
+    {
+      "id": "860",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "sampaloc",
+      "barangay": "barangay 587-a",
+      "coordinateSourceId": "24958"
+    },
+    {
+      "id": "1181",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "santa ana",
+      "barangay": "barangay 818-a",
+      "coordinateSourceId": "25219"
+    },
+    {
+      "id": "478",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "tondo i/ii",
+      "barangay": "barangay 202-a",
+      "coordinateSourceId": "24541"
+    },
+    {
+      "id": "1206",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "muntinlupa city",
+      "barangay": "new alabang village",
+      "coordinateSourceId": "1380800009"
+    },
+    {
+      "id": "1570",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "quezon city",
+      "barangay": "san isidro labrador",
+      "coordinateSourceId": "1381300099"
+    },
+    {
+      "id": "1585",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "quezon city",
+      "barangay": "silangan",
+      "coordinateSourceId": "1381300114"
+    },
+    {
+      "id": "1613",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "quezon city",
+      "barangay": "north fairview",
+      "coordinateSourceId": "1381300142"
+    },
+    {
+      "id": "1656",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "taguig city",
+      "barangay": "new lower bicutan",
+      "coordinateSourceId": "1381500022"
+    },
+    {
+      "id": "1671",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "taguig city",
+      "barangay": "south cembo",
+      "coordinateSourceId": "1381500037"
+    },
+    {
+      "id": "1704",
+      "region": "ncr",
+      "province": "ncr",
+      "municipalityCity": "valenzuela city",
+      "barangay": "wawang pulo",
+      "coordinateSourceId": "1381600032"
+    },
+    {
+      "id": "900001",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "alima",
+      "coordinateSourceId": "9998"
+    },
+    {
+      "id": "900002",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "aniban III",
+      "coordinateSourceId": "10001"
+    },
+    {
+      "id": "900003",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "aniban IV",
+      "coordinateSourceId": "10002"
+    },
+    {
+      "id": "900005",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "banalo",
+      "coordinateSourceId": "10004"
+    },
+    {
+      "id": "900006",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "camella springville",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900007",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "ligas III",
+      "coordinateSourceId": "10015"
+    },
+    {
+      "id": "900008",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "maliksi III",
+      "coordinateSourceId": "10021"
+    },
+    {
+      "id": "900010",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "niog II",
+      "coordinateSourceId": "10035"
+    },
+    {
+      "id": "900011",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "niog III",
+      "coordinateSourceId": "10036"
+    },
+    {
+      "id": "900012",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "p.f. espiritu VII (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900013",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "p.f. espiritu VIII (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900022",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "real II",
+      "coordinateSourceId": "10049"
+    },
+    {
+      "id": "900023",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "salinas III",
+      "coordinateSourceId": "10052"
+    },
+    {
+      "id": "900024",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "salinas IV",
+      "coordinateSourceId": "10053"
+    },
+    {
+      "id": "900026",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "tabing dagat",
+      "coordinateSourceId": "10058"
+    },
+    {
+      "id": "900027",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "talaba IV",
+      "coordinateSourceId": "10062"
+    },
+    {
+      "id": "900028",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "talaba V",
+      "coordinateSourceId": "402103090"
+    },
+    {
+      "id": "900029",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "talaba VI",
+      "coordinateSourceId": "10064"
+    },
+    {
+      "id": "900030",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "talaba VII",
+      "coordinateSourceId": "10065"
+    },
+    {
+      "id": "900032",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "zapote IV",
+      "coordinateSourceId": "10069"
+    },
+    {
+      "id": "900033",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "zapote V",
+      "coordinateSourceId": "402103092"
+    },
+    {
+      "id": "12742",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "aniban I",
+      "coordinateSourceId": "402103077"
+    },
+    {
+      "id": "12743",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "aniban II",
+      "coordinateSourceId": "10000"
+    },
+    {
+      "id": "12719",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "P.F. espiritu I poblacion (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "12737",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "P.F. espiritu VI (panapaan)",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900025",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "sineguelasan",
+      "coordinateSourceId": "10057"
+    },
+    {
+      "id": "900031",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "villar sipag i",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900034",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "villar sipag ii",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900035",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "villar sipag iii",
+      "coordinateSourceId": ""
+    },
+    {
+      "id": "900036",
+      "region": "calabarzon",
+      "province": "cavite",
+      "municipalityCity": "bacoor city",
+      "barangay": "villar sipag iv",
+      "coordinateSourceId": ""
+    }
+  ]
+}
