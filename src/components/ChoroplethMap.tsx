@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import {
@@ -6,6 +6,7 @@ import {
   BAGANGA_COLOR_MAP,
   type BagangaBarangayProperties
 } from '../data/geophBagangaBarangaysData';
+import PhilippinesMapBounds from './PhilippinesMapBounds';
 
 interface ChoroplethMapProps {
   onHoverBarangay: (b: BagangaBarangayProperties | null) => void;
@@ -20,7 +21,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
   onInitMap
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<L.Map | null>(null);
+  const [mapInstance, setMapInstance] = useState<L.Map | null>(null);
 
   const getBarangayColor = (pop: number) => {
     if (pop >= 8000) return BAGANGA_COLOR_MAP.RED;
@@ -40,9 +41,9 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
       zoomControl: false
     });
 
-    mapRef.current = map;
+    setMapInstance(map);
 
-    // Add Tile Layer (OpenStreetMap basemap)
+    // Add Tile Layer (OpenStreetMap basemap displaying natural ocean tiles)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -121,6 +122,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
   return (
     <div className="relative w-full h-full min-h-[540px]">
       <div ref={mapContainerRef} className="absolute inset-0 w-full h-full bg-slate-100 z-0" />
+      <PhilippinesMapBounds map={mapInstance} minZoom={6} maxBoundsViscosity={1.0} />
     </div>
   );
 };

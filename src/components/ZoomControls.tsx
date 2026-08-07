@@ -5,6 +5,8 @@ interface ZoomControlsProps {
   onZoomIn: () => void;
   onZoomOut: () => void;
   onRecenter: () => void;
+  onToggleFullscreen?: () => void;
+  isFullscreen?: boolean;
   mapInstance?: L.Map | null;
 }
 
@@ -12,6 +14,8 @@ export const ZoomControls: React.FC<ZoomControlsProps> = ({
   onZoomIn,
   onZoomOut,
   onRecenter,
+  onToggleFullscreen,
+  isFullscreen = false,
   mapInstance
 }) => {
   const handleIn = () => {
@@ -41,6 +45,43 @@ export const ZoomControls: React.FC<ZoomControlsProps> = ({
       >
         +
       </button>
+
+      {onToggleFullscreen && (
+        <button
+          type="button"
+          onClick={onToggleFullscreen}
+          title={isFullscreen ? 'Exit Full Screen' : 'Full Screen'}
+          aria-label={isFullscreen ? 'Exit Full Screen' : 'Full Screen'}
+          className="w-10 h-10 flex items-center justify-center text-slate-600 hover:text-cyan-700 hover:bg-cyan-50 active:bg-cyan-100 transition-colors border-b border-slate-200/60 cursor-pointer"
+        >
+          {isFullscreen ? (
+            <svg
+              className="w-[18px] h-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
+            </svg>
+          ) : (
+            <svg
+              className="w-[18px] h-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 2 2h3" />
+            </svg>
+          )}
+        </button>
+      )}
+
       <button
         type="button"
         onClick={onRecenter}
@@ -63,6 +104,7 @@ export const ZoomControls: React.FC<ZoomControlsProps> = ({
           <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
         </svg>
       </button>
+
       <button
         type="button"
         onClick={handleOut}
