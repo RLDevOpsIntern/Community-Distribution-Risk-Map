@@ -13,13 +13,15 @@ interface ChoroplethMapProps {
   onSelectBarangay: (b: BagangaBarangayProperties | null) => void;
   selectedBarangay: BagangaBarangayProperties | null;
   onInitMap?: (map: L.Map, bounds: L.LatLngBounds) => void;
+  isLocked?: boolean;
 }
 
 export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
   onHoverBarangay,
   onSelectBarangay,
   selectedBarangay,
-  onInitMap
+  onInitMap,
+  isLocked = true
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const geoJsonLayerRef = useRef<L.GeoJSON | null>(null);
@@ -153,7 +155,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
   return (
     <div className="relative w-full h-full min-h-[540px]">
       <div ref={mapContainerRef} className="absolute inset-0 w-full h-full bg-slate-100 z-0" />
-      <PhilippinesMapBounds map={mapInstance} minZoom={6} maxBoundsViscosity={1.0} />
+      <PhilippinesMapBounds map={mapInstance} minZoom={6} maxBoundsViscosity={1.0} isLocked={isLocked} />
     </div>
   );
 };

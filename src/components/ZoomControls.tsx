@@ -7,6 +7,8 @@ interface ZoomControlsProps {
   onRecenter: () => void;
   onToggleFullscreen?: () => void;
   isFullscreen?: boolean;
+  onToggleLock?: () => void;
+  isLocked?: boolean;
   mapInstance?: L.Map | null;
 }
 
@@ -16,6 +18,8 @@ export const ZoomControls: React.FC<ZoomControlsProps> = ({
   onRecenter,
   onToggleFullscreen,
   isFullscreen = false,
+  onToggleLock,
+  isLocked = true,
   mapInstance
 }) => {
   const handleIn = () => {
@@ -36,6 +40,47 @@ export const ZoomControls: React.FC<ZoomControlsProps> = ({
 
   return (
     <div className="flex flex-col bg-white/95 backdrop-blur-sm border border-slate-200/80 shadow-md rounded-xl overflow-hidden text-slate-700 w-10">
+      {onToggleLock && (
+        <button
+          type="button"
+          onClick={onToggleLock}
+          title={isLocked ? 'Unlock Location (Explore other countries)' : 'Lock Location to Philippines'}
+          aria-label={isLocked ? 'Unlock Location (Explore other countries)' : 'Lock Location to Philippines'}
+          className={`w-10 h-10 flex items-center justify-center transition-colors border-b border-slate-200/60 cursor-pointer ${isLocked
+              ? 'text-cyan-700 bg-cyan-50/80 hover:bg-cyan-100/80 active:bg-cyan-200/80'
+              : 'text-slate-600 hover:text-cyan-700 hover:bg-slate-50 active:bg-slate-100'
+            }`}
+        >
+          {isLocked ? (
+            <svg
+              className="w-[18px] h-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          ) : (
+            <svg
+              className="w-[18px] h-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+            </svg>
+          )}
+        </button>
+      )}
+
       <button
         type="button"
         onClick={handleIn}

@@ -7,6 +7,7 @@ export interface PhilippinesMapBoundsProps {
   minZoom?: number;
   maxBoundsViscosity?: number;
   maskColor?: string;
+  isLocked?: boolean;
 }
 
 /**
@@ -34,52 +35,63 @@ function lockMapToPhilippines(
 }
 
 /**
- * Declarative React Component that locks its target Leaflet map instance to the Philippines bounds.
+ * Declarative React Component that locks its target Leaflet map instance to the Philippines bounds when isLocked is true.
  */
 export const PhilippinesMapBounds: React.FC<PhilippinesMapBoundsProps> = ({
   map,
   minZoom = 6,
   maxBoundsViscosity = 1.0,
-  maskColor = '#aad3df'
+  maskColor = '#aad3df',
+  isLocked = true
 }) => {
   useEffect(() => {
     if (!map) return;
 
-    lockMapToPhilippines(map, { minZoom, maxBoundsViscosity });
+    if (isLocked) {
+      lockMapToPhilippines(map, { minZoom, maxBoundsViscosity });
 
-    // Keep the mask above the basemap but below application overlays such as
-    // barangay boundaries. The GeoJSON is a world polygon whose holes follow
-    // the Philippine coastline, so neighboring land and labels are concealed.
-    const paneName = 'philippines-mask';
-    const pane = map.getPane(paneName) ?? map.createPane(paneName);
-    pane.style.zIndex = '350';
-    pane.style.pointerEvents = 'none';
-
-    // Leaflet normally renders SVG paths only slightly beyond the viewport.
-    // A full viewport of padding prevents the basemap from peeking through the
-    // clipped edge of this unusually large polygon while the map is dragged.
-    const maskRenderer = L.svg({
-      pane: paneName,
-      padding: 1
-    });
-
-    const maskLayer = L.geoJSON(philippinesMaskGeoJSON as any, {
-      pane: paneName,
-      interactive: false,
-      style: {
-        renderer: maskRenderer,
-        stroke: false,
-        fillColor: maskColor,
-        fillOpacity: 1,
-        fillRule: 'evenodd'
+      if (!PHILIPPINES_BOUNDS.contains(map.getCenter()) || map.getZoom() < minZoom) {
+        map.panInsideBounds(PHILIPPINES_BOUNDS, { animate: true });
       }
-    }).addTo(map);
 
-    return () => {
-      maskLayer.removeFrom(map);
-      maskRenderer.removeFrom(map);
-    };
-  }, [map, minZoom, maxBoundsViscosity, maskColor]);
+      // Keep the mask above the basemap but below application overlays such as
+      // barangay boundaries. The GeoJSON is a world polygon whose holes follow
+      // the Philippine coastline, so neighboring land and labels are concealed.
+      const paneName = 'philippines-mask';
+      const pane = map.getPane(paneName) ?? map.createPane(paneName);
+      pane.style.zIndex = '350';
+      pane.style.pointerEvents = 'none';
+
+      // Leaflet normally renders SVG paths only slightly beyond the viewport.
+      // A full viewport of padding prevents the basemap from peeking through the
+      // clipped edge of this unusually large polygon while the map is dragged.
+      const maskRenderer = L.svg({
+        pane: paneName,
+        padding: 1
+      });
+
+      const maskLayer = L.geoJSON(philippinesMaskGeoJSON as any, {
+        pane: paneName,
+        interactive: false,
+        style: {
+          renderer: maskRenderer,
+          stroke: false,
+          fillColor: maskColor,
+          fillOpacity: 1,
+          fillRule: 'evenodd'
+        }
+      }).addTo(map);
+
+      return () => {
+        maskLayer.removeFrom(map);
+        maskRenderer.removeFrom(map);
+      };
+    } else {
+      map.setMaxBounds(null as any);
+      map.setMinZoom(2);
+      map.options.maxBoundsViscosity = 0;
+    }
+  }, [map, minZoom, maxBoundsViscosity, maskColor, isLocked]);
 
   return null;
 };

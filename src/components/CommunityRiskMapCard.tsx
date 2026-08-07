@@ -24,7 +24,8 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
   const [hoveredBarangay, setHoveredBarangay] = useState<BagangaBarangayProperties | null>(null);
   const [selectedBarangay, setSelectedBarangay] = useState<BagangaBarangayProperties | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+  const [isLocked, setIsLocked] = useState(true);
+
   const mapRef = useRef<L.Map | null>(null);
   const initialMapBoundsRef = useRef<L.LatLngBounds | null>(null);
   const mapContainerFrameRef = useRef<HTMLDivElement>(null);
@@ -32,6 +33,10 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
   const handleInitMap = useCallback((map: L.Map, bounds: L.LatLngBounds) => {
     mapRef.current = map;
     initialMapBoundsRef.current = bounds;
+  }, []);
+
+  const handleToggleLock = useCallback(() => {
+    setIsLocked(prev => !prev);
   }, []);
 
   const handleZoomIn = useCallback(() => {
@@ -89,7 +94,7 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
 
   return (
     <div className={`w-full max-w-6xl bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden p-6 md:p-8 flex flex-col gap-6 ${className}`}>
-      
+
       {/* Header Bar */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
         <div>
@@ -109,11 +114,10 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer ${
-                  activeTab === tab
+                className={`px-4 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer ${activeTab === tab
                     ? 'bg-white text-cyan-600 shadow-sm border border-cyan-500/40'
                     : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -125,11 +129,10 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
       {/* Map Frame Container */}
       <div
         ref={mapContainerFrameRef}
-        className={`relative w-full bg-slate-50 border border-slate-200/90 shadow-inner overflow-hidden transition-all ${
-          isFullscreen
+        className={`relative w-full bg-slate-50 border border-slate-200/90 shadow-inner overflow-hidden transition-all ${isFullscreen
             ? 'fixed inset-0 z-50 w-screen h-screen rounded-none'
             : 'h-[540px] rounded-2xl'
-        }`}
+          }`}
       >
         {/* Zoom Controls */}
         <div className="absolute bottom-6 left-6 z-20">
@@ -139,6 +142,8 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
             onRecenter={handleRecenterMap}
             onToggleFullscreen={handleToggleFullscreen}
             isFullscreen={isFullscreen}
+            onToggleLock={handleToggleLock}
+            isLocked={isLocked}
           />
         </div>
 
@@ -156,6 +161,7 @@ export const CommunityRiskMapCard: React.FC<CommunityRiskMapCardProps> = ({
             onHoverBarangay={setHoveredBarangay}
             onSelectBarangay={setSelectedBarangay}
             onInitMap={handleInitMap}
+            isLocked={isLocked}
           />
         </div>
       </div>
