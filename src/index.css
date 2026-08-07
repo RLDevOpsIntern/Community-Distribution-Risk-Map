@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
+/* Leaflet/browser focus outlines use an SVG element's rectangular bounds.
+   The selected barangay receives a coastline-following path style instead. */
+.leaflet-container .barangay-boundary:focus {
+  outline: none;
+}
+
 @layer base {
   html, body, #root {
     width: 100%;

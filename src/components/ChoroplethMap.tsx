@@ -18,9 +18,12 @@ interface ChoroplethMapProps {
 export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
   onHoverBarangay,
   onSelectBarangay,
+  selectedBarangay,
   onInitMap
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
+  const geoJsonLayerRef = useRef<L.GeoJSON | null>(null);
+  const selectedBarangayIdRef = useRef<string | null>(selectedBarangay?.id ?? null);
   const [mapInstance, setMapInstance] = useState<L.Map | null>(null);
 
   const getBarangayColor = (pop: number) => {
@@ -30,6 +33,20 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
     if (pop >= 1500) return BAGANGA_COLOR_MAP.TEAL;
     return BAGANGA_COLOR_MAP.LIGHT_BLUE;
   };
+
+  selectedBarangayIdRef.current = selectedBarangay?.id ?? null;
+
+  const getBarangayStyle = (
+    properties: BagangaBarangayProperties,
+    isSelected = false
+  ): L.PathOptions => ({
+    fillColor: getBarangayColor(properties.population),
+    weight: isSelected ? 4 : 1.8,
+    opacity: 1,
+    color: isSelected ? '#0369a1' : '#ffffff',
+    fillOpacity: isSelected ? 0.92 : 0.75,
+    className: 'barangay-boundary'
+  });
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
@@ -55,16 +72,10 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
 
     // Style and Add Baganga Barangay Boundary Layer
     const geoJsonLayer = L.geoJSON(bagangaBarangaysGeoJSON as any, {
-      style: (feature) => {
-        const pop = feature?.properties?.population || 0;
-        return {
-          fillColor: getBarangayColor(pop),
-          weight: 1.8,
-          opacity: 1,
-          color: '#ffffff',
-          fillOpacity: 0.75
-        };
-      },
+      style: (feature) => getBarangayStyle(
+        feature?.properties as BagangaBarangayProperties,
+        feature?.properties?.id === selectedBarangayIdRef.current
+      ),
       onEachFeature: (feature, layer) => {
         const props = feature.properties as BagangaBarangayProperties;
 
@@ -88,7 +99,8 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
             onHoverBarangay(props);
           },
           mouseout: (e) => {
-            geoJsonLayer.resetStyle(e.target);
+            const isSelected = props.id === selectedBarangayIdRef.current;
+            e.target.setStyle(getBarangayStyle(props, isSelected));
             onHoverBarangay(null);
           },
           click: () => {
@@ -97,6 +109,7 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
         });
       }
     }).addTo(map);
+    geoJsonLayerRef.current = geoJsonLayer;
 
     const bagangaBounds = geoJsonLayer.getBounds();
     map.fitBounds(bagangaBounds, { padding: [25, 25] });
@@ -115,9 +128,27 @@ export const ChoroplethMap: React.FC<ChoroplethMapProps> = ({
     setTimeout(refreshMap, 150);
 
     return () => {
+      geoJsonLayerRef.current = null;
       map.remove();
     };
   }, [onHoverBarangay, onSelectBarangay, onInitMap]);
+
+  useEffect(() => {
+    const geoJsonLayer = geoJsonLayerRef.current;
+    if (!geoJsonLayer) return;
+
+    geoJsonLayer.eachLayer((layer) => {
+      const path = layer as L.Path & {
+        feature?: { properties?: BagangaBarangayProperties };
+      };
+      const properties = path.feature?.properties;
+      if (!properties) return;
+
+      const isSelected = properties.id === selectedBarangay?.id;
+      path.setStyle(getBarangayStyle(properties, isSelected));
+      if (isSelected) path.bringToFront();
+    });
+  }, [selectedBarangay]);
 
   return (
     <div className="relative w-full h-full min-h-[540px]">
